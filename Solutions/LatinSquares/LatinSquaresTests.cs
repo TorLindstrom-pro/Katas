@@ -1,4 +1,6 @@
-﻿namespace LatinSquares;
+﻿using NUnit.Framework;
+
+namespace Solutions.LatinSquares;
 
 public class LatinSquaresTests
 {
@@ -26,7 +28,7 @@ public class LatinSquaresTests
 	}
 	
 	[Theory]
-	public void MakeLatinSquare_NonPositiveSize_ThrowsException([Range(-1,0)] int size)
+	public void MakeLatinSquare_NonPositiveSize_ThrowsException([System.ComponentModel.DataAnnotations.Range(-1,0)] int size)
 	{
 		Assert.Throws<ArgumentException>(() => LatinSquare.MakeLatinSquare(size));
 	}

@@ -1,4 +1,4 @@
-﻿namespace LatinSquares;
+﻿namespace Solutions.LatinSquares;
 
 public class LatinSquare
 {
