@@ -8,11 +8,14 @@ public class Atm
 		}
       
 		List<int> notes = [500, 200, 100, 50, 20, 10];
-		
-		return notes.Aggregate(new Tuple<int, int>(n, 0), (accumulated, note) =>
+
+		var result = 0;
+		while (n > 0)
 		{
-			var (quotient, remainder) = int.DivRem(accumulated.Item1, note);
-			return new Tuple<int, int>(remainder, accumulated.Item2 + quotient);
-		}).Item2;
+			n -= notes.First(note => note <= n);
+			result++;
+		}
+
+		return result;
 	} 
 }
